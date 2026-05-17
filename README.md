@@ -55,9 +55,54 @@ Structurally it follows Aurélien Géron's *Hands-On Machine Learning* (Chapter 
 
 ---
 
-## 📈 Results
+## 📊 EDA Highlights
 
-The tuned **Gradient Boosting / XGBoost** regressor produces the best hold-out performance among tested models. See [`notebooks/fifa_player_wage_prediction.ipynb`](notebooks/fifa_player_wage_prediction.ipynb) for full metric tables, the CATE distribution, and refutation results.
+**Wage distribution** — heavily right-skewed; log-transform applied before modeling.
+![Wage distribution](images/wage_distribution.png)
+
+**Wages by player attributes** — pairwise relationships between wage and key numeric features.
+![Wages by attributes](images/wages_by_attributes.png)
+
+**Wages by league and position** — the league effect dominates the position effect by a wide margin.
+![Wages by league and position](images/wages_by_league_position.png)
+
+**Correlation matrix** — strong inter-correlation among offensive/technical attributes informs the feature-engineering step.
+![Correlation matrix](images/correlation_matrix.png)
+
+**Engineered features** — derived attribute combinations show stronger linear relationships with wage than the raw features.
+![Engineered features](images/engineered_features.png)
+
+---
+
+## 📈 Modeling Results
+
+**Cross-validation across model families** — Gradient Boosting and XGBoost lead, but Random Forest is close on RMSE while being far cheaper to train.
+![Cross-validation results](images/cross_validation_results.png)
+
+**Feature importance from the tuned Gradient Boosting model** — overall rating, age, and league reputation dominate.
+![Feature importance](images/feature_importance.png)
+
+**Test-set evaluation** — predicted vs actual wages on the held-out set.
+![Test set evaluation](images/test_set_evaluation.png)
+
+---
+
+## 🧪 Causal Inference Results
+
+**CATE distribution** — the per-player conditional average treatment effect estimated by the T-Learner. A skewed tail reveals that the treatment effect is highly heterogeneous: some players gain far more from the treatment than others.
+![CATE distribution](images/cate_distribution.png)
+
+**Heterogeneous treatment effect by player rating** — higher-rated players see a meaningfully larger wage effect from the treatment.
+![HTE by rating](images/hte_by_rating.png)
+
+**Drivers of treatment-effect heterogeneity** — which features explain *why* the treatment effect varies across the population.
+![HTE feature importance](images/hte_feature_importance.png)
+
+**DoWhy structural causal model — rendered DAG.**
+![DoWhy causal DAG](images/causal_dag_render.png)
+
+**Conclusion view** — final visualization summarizing the CausalML + DoWhy convergence story.
+![Causal conclusion](images/causal_conclusion.png)
 
 > *Causal estimates from CausalML and DoWhy converge on a positive treatment effect for the analyzed skill, surviving placebo and random-cause refutations.*
 

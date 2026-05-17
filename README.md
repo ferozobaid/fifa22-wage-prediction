@@ -30,7 +30,7 @@ bash scripts/download_data.sh
 2. **Feature engineering** — custom `BaseEstimator/TransformerMixin` classes; numeric pipeline (impute + scale) + categorical pipeline (impute + one-hot) wired through `ColumnTransformer`
 3. **Modeling** — Linear / Ridge / Lasso, Decision Tree, Random Forest, Gradient Boosting, XGBoost, with `GridSearchCV` / `RandomizedSearchCV` over key hyperparameters
 4. **Evaluation** — RMSE, MAE, R² on a stratified hold-out split
-5. **Causal inference** — `dowhy` + `causalml` (T-Learner) to estimate treatment effects of selected skill attributes on wage
+5. **Causal inference** (Part 2 of the assignment, Section 10 of the main notebook) — `causalml` for heterogeneous treatment effects (T-Learner, CATE distribution, HTE by player rating) and `dowhy` for a full structural causal model (define → identify → estimate → refute)
 6. **Persistence** — preprocessor, feature engineer, and final model serialized to `models/` via `joblib`
 
 ## Results

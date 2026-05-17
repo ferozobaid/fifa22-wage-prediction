@@ -1,0 +1,44 @@
+# Data
+data/raw/
+data/interim/
+data/processed/
+*.csv
+!reports/*.csv
+!data/IDS_mapping.csv
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+.env
+
+# Jupyter
+*.ipynb_convert_files/
+
+# OS
+.DS_Store
+~$*
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Build / coverage
+build/
+dist/
+*.egg-info/
+.coverage
+htmlcov/
+
+# Large model artifacts (regenerate via notebook)
+*.pkl
+!models/*.pkl

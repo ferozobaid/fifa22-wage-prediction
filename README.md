@@ -1,4 +1,4 @@
-# ⚽ FIFA 22 — End-to-End ML Pipeline + Causal Inference
+#  FIFA 22 — End-to-End ML Pipeline + Causal Inference
 
 > **Predicting weekly player wages from FIFA 22 audio features, then asking which skills *cause* wage uplift — an end-to-end ML pipeline layered with `CausalML` and `DoWhy`.**
 

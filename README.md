@@ -11,7 +11,7 @@
 
 ---
 
-## 📌 Overview
+##  Overview
 
 Player wages in professional football are driven by a complex blend of on-pitch skill, age, contract terms, club prestige, and market dynamics. This project builds an **end-to-end ML pipeline** that predicts a player's weekly wage in EUR, then layers **causal inference** on top to estimate the *uplift* attributable to specific skill features.
 
@@ -19,7 +19,7 @@ Structurally it follows Aurélien Géron's *Hands-On Machine Learning* (Chapter 
 
 ---
 
-## 📊 Dataset
+##  Dataset
 
 | Property | Value |
 |---|---|
@@ -31,7 +31,7 @@ Structurally it follows Aurélien Géron's *Hands-On Machine Learning* (Chapter 
 
 ---
 
-## 🛠️ Methodology
+##  Methodology
 
 ### Part 1 — Predictive Pipeline
 
@@ -55,7 +55,7 @@ Structurally it follows Aurélien Géron's *Hands-On Machine Learning* (Chapter 
 
 ---
 
-## 📊 EDA Highlights
+##  EDA Highlights
 
 **Wage distribution** — heavily right-skewed; log-transform applied before modeling.
 ![Wage distribution](images/wage_distribution.png)
@@ -74,7 +74,7 @@ Structurally it follows Aurélien Géron's *Hands-On Machine Learning* (Chapter 
 
 ---
 
-## 📈 Modeling Results
+##  Modeling Results
 
 **Cross-validation across model families** — Gradient Boosting and XGBoost lead, but Random Forest is close on RMSE while being far cheaper to train.
 ![Cross-validation results](images/cross_validation_results.png)
@@ -87,7 +87,7 @@ Structurally it follows Aurélien Géron's *Hands-On Machine Learning* (Chapter 
 
 ---
 
-## 🧪 Causal Inference Results
+##  Causal Inference Results
 
 **CATE distribution** — the per-player conditional average treatment effect estimated by the T-Learner. A skewed tail reveals that the treatment effect is highly heterogeneous: some players gain far more from the treatment than others.
 ![CATE distribution](images/cate_distribution.png)
@@ -108,7 +108,7 @@ Structurally it follows Aurélien Géron's *Hands-On Machine Learning* (Chapter 
 
 ---
 
-## 🧪 Tech Stack
+##  Tech Stack
 
 | Layer | Tools |
 |---|---|
@@ -120,7 +120,7 @@ Structurally it follows Aurélien Géron's *Hands-On Machine Learning* (Chapter 
 
 ---
 
-## 📂 Repository Structure
+##  Repository Structure
 
 ```
 fifa22-wage-prediction/
@@ -143,7 +143,7 @@ fifa22-wage-prediction/
 
 ---
 
-## 🚀 Run It Locally
+##  Run It Locally
 
 ```bash
 git clone https://github.com/ferozobaid/fifa22-wage-prediction.git
@@ -156,7 +156,7 @@ jupyter lab notebooks/fifa_player_wage_prediction.ipynb
 
 ---
 
-## 🔭 Future Improvements
+##  Future Improvements
 
 - **Position-stratified models** — separate regressors for GK / DEF / MID / FWD
 - **Wage-bucket classification** — frame as ordinal classification of wage tiers
@@ -165,11 +165,11 @@ jupyter lab notebooks/fifa_player_wage_prediction.ipynb
 
 ---
 
-## 👤 Author
+##  Author
 
 **Feroz Obaid Khan** — Master of Management Analytics, McGill University
 🔗 GitHub: [@ferozobaid](https://github.com/ferozobaid)
 
-## 📜 License
+##  License
 
 MIT — see [LICENSE](LICENSE).
